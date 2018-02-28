@@ -8,7 +8,6 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @SpringBootApplication
-@EnablePrometheusEndpoint
 public class JprometheusApplication extends WebMvcConfigurerAdapter {
 
 	public static void main(String[] args) {

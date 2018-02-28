@@ -1,4 +1,4 @@
-package com.jw.prometheus.jprometheus.interceptor;
+package io.jprometheus.interceptor;
 
 import io.prometheus.client.Counter;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -6,12 +6,12 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class PrometheusMetricsInterceptor extends HandlerInterceptorAdapter {
+public class PrometheusRequestStatisticsInterceptor extends HandlerInterceptorAdapter {
 
     static final Counter counter = Counter.build()
-                                        .name("myRequest_total")
+                                        .name("Request_Statistics")
                                         .labelNames("method","path","status")
-                                        .help("Total Requests")
+                                        .help("The Statistics of Total Requests")
                                         .register();
 
     @Override

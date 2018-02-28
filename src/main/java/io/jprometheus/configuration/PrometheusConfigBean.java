@@ -1,4 +1,4 @@
-package com.jw.prometheus.jprometheus.configuration;
+package io.jprometheus.configuration;
 
 import io.prometheus.client.exporter.MetricsServlet;
 import io.prometheus.client.hotspot.DefaultExports;
