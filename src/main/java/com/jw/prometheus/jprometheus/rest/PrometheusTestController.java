@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class PrometheusTestController {
 
     @RequestMapping("first")
-    public void firstMethod() {
+    public String firstMethod() {
         System.out.println("receive first one");
+        return "qwert";
     }
 
     @RequestMapping("second")
