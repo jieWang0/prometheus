@@ -6,10 +6,13 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * use to count the active request in process
+ * */
 public class PrometheusActiveRequestInterceptor extends HandlerInterceptorAdapter {
 
     static final Gauge activeRequests = Gauge.build()
-            .name("Active_Request_Total").labelNames("path", "method", "code")
+            .name("Active_Request_Total").labelNames("path", "method", "status")
             .help("Active Requests").register();
 
     @Override

@@ -10,6 +10,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class PrometheusConfigBean {
 
+    /**
+     * register a servlet to deal with the request "/prometheus"
+     * */
     @Bean
     ServletRegistrationBean servletRegistrationBean() {
         DefaultExports.initialize();

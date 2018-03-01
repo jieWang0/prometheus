@@ -6,6 +6,9 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * use to get the request quantity group by response status, request path and request method
+ * */
 public class PrometheusRequestStatisticsInterceptor extends HandlerInterceptorAdapter {
 
     static final Counter counter = Counter.build()
