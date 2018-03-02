@@ -1,0 +1,21 @@
+image: 172.16.1.99/transwarp/base/builder:centos7
+
+before_script:
+    - export JAVA_HOME=/usr/jdk-8u131-linux-x64.tar/jdk1.8.0_131
+    - export PATH=/usr/jdk-8u131-linux-x64.tar/jdk1.8.0_131/bin:$PATH
+    - java -version
+
+stages:
+  - package_jar
+
+package_jar:
+  stage: package_jar
+  script:
+    - set -ex
+    - git clone http://gitlab-ci-token:${CI_JOB_TOKEN}@172.16.1.41:10080/InfraTools/base_project.git base_project
+    - cp base_project/settings_postcommit.xml /root/.m2/settings.xml
+    - mvn clean package
+  only:
+    - master
+  tags:
+    - k8s           #指定了使用哪个Runner
